@@ -1,53 +1,39 @@
-CKEditor Package
-=====================
+CKEditor 4
+==========
 
-## Note
+Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+https://ckeditor.com - See LICENSE.md for license information.
 
-**This is NOT the official CKEDITOR package.**
+CKEditor 4 is a text editor to be used inside web pages. It's not a replacement
+for desktop text editors like Word or OpenOffice, but a component to be used as
+part of web applications and websites.
 
-[CKEDITOR officially has its own composer package since 2014](https://ckeditor.com/blog/CKEditor-Supports-Bower-and-Composer/). Instead of using this package, we recommend you follow [the official CKEditor installation instructions with package managers](https://docs.ckeditor.com/ckeditor4/latest/guide/dev_package_managers.html#composer)
+## Documentation
+
+The full editor documentation is available online at the following address:
+https://ckeditor.com/docs/
 
 ## Installation
-### Set up package
 
-```
-composer require unisharp/laravel-ckeditor
-```
+Installing CKEditor is an easy task. Just follow these simple steps:
 
-### Add ServiceProvider
+ 1. **Download** the latest version from the CKEditor website:
+    https://ckeditor.com. You should have already completed this step, but be
+    sure you have the very latest version.
+ 2. **Extract** (decompress) the downloaded file into the root of your website.
 
-For Laravel 5.5+ you can skip this step. 
+**Note:** CKEditor is by default installed in the `ckeditor` folder. You can
+place the files in whichever you want though.
 
-For Laravel 5.4 and earlier edit config/app.php, add the following file to `Application Service Providers` section.
-```
-Unisharp\Ckeditor\ServiceProvider::class,
-```
-### Publish the resources
-```
-php artisan vendor:publish --tag=ckeditor
-```
-## Usage
+## Checking Your Installation
 
-Default way (initiate by name or id) :
+The editor comes with a few sample pages that can be used to verify that
+installation proceeded properly. Take a look at the `samples` directory.
 
-```javascript
-    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace( 'article-ckeditor' );
-    </script>
-```
+To test your installation, just call the following page at your website:
 
-Or if you want to initiate by jQuery selector :
+	http://<your site>/<CKEditor installation path>/samples/index.html
 
-```javascript
-    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-    <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
-    <script>
-        $('textarea').ckeditor();
-        // $('.textarea').ckeditor(); // if class is prefered.
-    </script>
-```
+For example:
 
-## File Uploader Integration
-
- Instead of using KCFinder, we recommend [laravel-filemanager](https://github.com/UniSharp/laravel-filemanager) for the file uploader integration for better laravel user access control and specific per user folders.
+	http://www.example.com/ckeditor/samples/index.html
