@@ -4,7 +4,6 @@ namespace Aristides\Ckeditor;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-
     public function boot()
     {
         $this->publishes(
@@ -24,6 +23,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     public function register()
     {
-
+        //
     }
 }
